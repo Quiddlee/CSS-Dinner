@@ -5,7 +5,7 @@
 # Features 🚀
 - **10 Leveles To Practice Your Css Selecting Skills 💪**
   
-<img width="600px" src="https://github.com/Quiddlee/RS-Selectors/assets/114234698/a579aa85-acf3-437c-9b0a-07ea948d012a"></img>
+<img src="https://github.com/Quiddlee/RS-Selectors/assets/114234698/a579aa85-acf3-437c-9b0a-07ea948d012a"></img>
 
 # Technology Stack ⚙️
 ### **Developing ✅**
