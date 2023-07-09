@@ -1,0 +1,27 @@
+@keyframes table-items-fade-in {
+  0% {
+    opacity: 0;
+    scale: 0;
+    filter: blur(.3rem);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(0);
+    translate: 0 -3rem;
+    scale: 1.1;
+  }
+
+  75% {
+    transform: skew(-3deg);
+    filter: blur(.05rem);
+    translate: 0 .7rem;
+    scale: .9;
+  }
+
+  100% {
+    transform: skew(3deg);
+    translate: 0;
+    scale: 1;
+  }
+}

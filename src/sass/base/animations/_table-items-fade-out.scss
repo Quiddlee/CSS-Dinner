@@ -1,0 +1,11 @@
+@keyframes table-items-fade-out {
+  0% {
+    translate: 0;
+  }
+
+  100% {
+    scale: 2;
+    translate: 0 -50rem;
+    filter: blur(.3rem);
+  }
+}

@@ -1,0 +1,35 @@
+.check-icon {
+  fill: color-mix(in srgb, var(--color-quartenary), transparent 70%);
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 100px;
+  box-shadow: .1rem .1rem .3rem var(--color-shadow-grey);
+
+  &--second-rect,
+  &--first-rect {
+    fill: var(--color-grey-light)
+  }
+
+  &--active {
+    fill: var(--check-mark-color);
+    animation: check-icon-fade-in .8s;
+  }
+
+  &--active &--second-rect,
+  &--active &--first-rect {
+    fill: var(--color-grey-light);
+  }
+
+  &--active &--first-rect {
+    animation: first-rect-fade-in .8s cubic-bezier(.96, .2, .2, 1.58);
+  }
+
+  &--active &--second-rect {
+    animation: second-rect-fade-in .9s cubic-bezier(.17, .58, .2, 1.48);
+  }
+
+  &--hint {
+    fill: var(--color-secondary);
+  }
+}

@@ -1,0 +1,48 @@
+plate {
+  @include flex-center;
+
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+
+  background-color: white;
+  box-shadow: var(--shadow-table-items);
+  border-bottom: .3rem solid var(--color-shadow-grey-lightest);
+
+  &,
+  &:before {
+    border-radius: 10rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-top: .3rem solid var(--color-shadow-grey-lightest);
+  }
+
+  &#fancy {
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border: 1rem solid var(--color-secondary);
+      border-radius: 100rem;
+      scale: .9;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 6rem;
+    height: 6rem;
+  }
+}

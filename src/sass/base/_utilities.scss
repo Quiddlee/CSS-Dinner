@@ -1,0 +1,90 @@
+/////////////////////////
+// Text alignment
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+/////////////////////////
+// Margin bottom
+
+.u-mb-1-5 {
+  margin-bottom: 1.5rem;
+}
+
+.u-mb-4 {
+  margin-bottom: 4rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 3rem;
+  }
+}
+
+.u-mb-8 {
+  margin-bottom: 8rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 5rem;
+  }
+}
+
+/////////////////////////
+// Margin top
+
+.u-mt-1-5 {
+  margin-top: 1.5rem;
+}
+
+.u-mt-4 {
+  margin-top: 4rem;
+
+  @include respond(tab-port) {
+    margin-top: 3rem;
+  }
+}
+
+.u-mt-8 {
+  margin-top: 8rem;
+
+  @include respond(tab-port) {
+    margin-top: 5rem;
+  }
+}
+
+.u-mt-10 {
+  margin-top: 10rem;
+}
+
+/////////////////////////
+// Padding
+
+.pl-20 {
+  padding-left: 2rem;
+}
+
+/////////////////////////
+// shake animation
+
+.shake {
+  animation: shake .1s 5;
+}
+
+/////////////////////////
+// display none
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+
+  &:not(&:not(.btn)) {
+    pointer-events: none;
+  }
+}

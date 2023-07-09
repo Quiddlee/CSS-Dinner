@@ -1,0 +1,29 @@
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) .8fr;
+  grid-template-rows: repeat(2, 1fr);
+
+  max-width: 120rem;
+  max-height: 100rem;
+
+  margin: 4vw auto;
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  background-color: var(--background-main);
+
+  box-shadow: 0 .5rem 5rem var(--color-shadow-grey-light);
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0 auto;
+    border-radius: 0;
+    overflow: auto;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr .75fr;
+    overflow: hidden;
+  }
+}

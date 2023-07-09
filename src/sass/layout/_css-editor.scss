@@ -1,0 +1,80 @@
+.css-editor {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+
+  grid-row: 2 / 4;
+
+  background-color: var(--color-grey-darken);
+
+  &__editor-area {
+    display: flex;
+    margin: 1rem;
+  }
+
+  &__input,
+  &__enter-btn {
+    max-height: 2rem;
+    border: none;
+    font: inherit;
+    outline: none;
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1rem;
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+    background-color: inherit;
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+      font-weight: 600;
+    }
+
+    transition: background-position 1s cubic-bezier(.14, .25, 0, 1.08), color 1s;
+    background-size: 100rem;
+    background-image: linear-gradient(to right, var(--color-grey-dark), var(--color-primary-light) 30%, white 99%);
+    -webkit-background-clip: text;
+  }
+
+  &__enter-btn {
+    min-width: 6rem;
+    min-height: 2.3rem;
+
+    border-radius: 10rem;
+    background-color: var(--color-white-alpha-7);
+
+    box-shadow: 0 .3rem .7rem var(--color-shadow-grey-lightest);
+    transition: all .1s cubic-bezier(.22, .27, 0, 1.99);
+    color: inherit;
+    cursor: pointer;
+
+    translate: 0 -.2rem;
+
+    &:active {
+      translate: 0;
+      box-shadow: 0 .2rem .1rem var(--color-shadow-grey-lightest);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      min-width: 4rem;
+      min-height: 0;
+      height: 1.7rem;
+      font-size: .9rem;
+    }
+  }
+}
+
+.clicked {
+  translate: 0;
+  box-shadow: 0 .2rem .1rem var(--color-shadow-grey-lightest);
+}
+
+.input-strobe {
+  animation: input-strobe 4s infinite cubic-bezier(.04, .53, .52, .96);
+}

@@ -1,0 +1,150 @@
+@use '../abstracts/mixins';
+
+.side-panel {
+  @include mixins.flex-col-center;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+
+  background-color: var(--color-white);
+  color: var(--text-color-black);
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
+
+  &__header {
+    margin: 3.5rem 3rem 3rem 2rem;
+    line-height: .8;
+    font-size: 3.5rem;
+    background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
+    color: transparent;
+    -webkit-background-clip: text;
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 2.5rem;
+      margin: 4rem 1.5rem 1rem 2rem;
+    }
+  }
+
+  &__levels {
+    display: grid;
+    list-style: none;
+    width: 100%;
+    justify-self: start;
+    gap: 1rem;
+  }
+
+  &__level {
+    @include mixins.flex-center;
+    position: relative;
+    min-height: 5rem;
+    width: 100%;
+
+    &__btn {
+      @include mixins.flex-center;
+      justify-content: flex-start;
+
+      position: relative;
+
+      gap: 1rem;
+      font-size: 1.8rem;
+
+      background-color: inherit;
+
+      height: 100%;
+      width: 100%;
+
+      text-align: left;
+      padding-left: 2rem;
+      overflow: hidden;
+
+      @media only screen and (max-width: $bp-largest) {
+        font-size: 1.5rem;
+        gap: .7rem;
+      }
+    }
+
+    &__fill {
+      content: '';
+      position: absolute;
+
+      width: inherit;
+      height: 0;
+
+      left: 99%;
+
+      background-color: var(--color-primary);
+      transition: height .2s, left .25s .2s cubic-bezier(1, 0, 0, 1);
+      pointer-events: none;
+    }
+
+    &__fill--active,
+    &:hover &__fill {
+      height: 5rem;
+      left: 0;
+    }
+  }
+
+  &__descr {
+    margin-left: .5rem;
+    color: var(--color-grey-dark);
+    font-size: 1.5rem;
+    padding-right: 5rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 1.3rem;
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 1.3rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  &__level-num {
+    min-width: 3rem;
+    text-align: center;
+  }
+
+  &__level__btn,
+  &__reset-progress {
+    color: inherit;
+  }
+
+  &__descr,
+  &__level-num,
+  &__checkmark {
+    z-index: 2;
+  }
+
+  &__checkmark {
+    min-width: 2rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      display: grid;
+      scale: .9;
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 1rem;
+    }
+  }
+
+  &__reset-progress {
+    margin: 3rem auto;
+    min-height: 5rem;
+    min-width: 18rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      margin: 1.5rem auto;
+      min-width: 15rem;
+      min-height: 4rem;
+      font-size: 1.5rem;
+    }
+  }
+}

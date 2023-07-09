@@ -1,0 +1,36 @@
+bento {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--color-tertiary);
+  border-top: 3rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+  border-bottom: 3rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+  border-radius: .6rem;
+  box-shadow: var(--shadow-table-items);
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: solid .5rem var(--color-shadow-grey-lightest);
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 8rem;
+    height: 8rem;
+    border-top: 2rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+    border-bottom: 2rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 6rem;
+    height: 6rem;
+    border-top: 1.5rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+    border-bottom: 1.5rem solid color-mix(in srgb, var(--color-tertiary), var(--color-black) 60%);
+  }
+}

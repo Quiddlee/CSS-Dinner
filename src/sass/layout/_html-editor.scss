@@ -1,0 +1,29 @@
+.html-editor {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  grid-row: 2 / 4;
+
+  background-color: var(--color-grey-very-light);
+  color: var(--color-grey-dark);
+
+  &__markup {
+    margin: 1rem;
+    cursor: default;
+
+    &__block {
+      transition: background-position 1s cubic-bezier(.14, .25, 0, 1.08), color 1s;
+      background-size: 50rem;
+      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-grey-dark), transparent 90%);
+      -webkit-background-clip: text;
+      background-position: -29rem;
+    }
+  }
+}
+
+div.hover--html {
+  transition: background-position 1s cubic-bezier(.14, .25, 0, 1.08);
+  color: transparent;
+  background-position: 2rem;
+  font-weight: 600;
+}

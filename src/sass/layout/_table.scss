@@ -1,0 +1,264 @@
+@use '../abstracts/mixins';
+
+.table-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-rows: .2fr .1fr .5fr;
+
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / 3;
+
+  background-image: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--color-primary-light), var(--color-white) 15%),
+      color-mix(in srgb, var(--color-primary-dark), var(--color-white) 15%)
+  );
+
+  -webkit-perspective: 40rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    gap: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: .3fr .1fr .5fr;
+  }
+
+  &__mobile {
+    &--checkmark,
+    &--prev,
+    &--next {
+      display: none;
+      position: absolute;
+      right: 2rem;
+      top: 5rem;
+
+      width: 1.7rem;
+      height: 1.7rem;
+
+      transition: .3s all;
+    }
+
+    &--prev,
+    &--next {
+      fill: var(--color-grey-dark);
+    }
+
+    &--next {
+      &:active {
+        translate: .3rem 0;
+      }
+    }
+
+    &--prev {
+      right: 5rem;
+
+      &:active {
+        translate: -.3rem 0;
+      }
+    }
+
+    &--checkmark {
+      right: 8rem;
+      scale: .8;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      padding-top: 3rem;
+      gap: 2.5rem;
+
+      &--checkmark,
+      &--prev,
+      &--next {
+        display: block;
+      }
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 15rem;
+    background-image: linear-gradient(to top,
+      color-mix(in srgb, var(--color-grey-darken), transparent 70%),
+      transparent 90%
+    );
+  }
+
+  &__title {
+    justify-self: center;
+    font-size: 3.5rem;
+    color: color-mix(in srgb, var(--color-primary-dark), var(--color-black) 40%);
+
+    @media only screen and (max-width: $bp-largest) {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 3rem;
+      text-wrap: balance;
+      max-width: 45rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.3rem;
+      max-width: 25rem;
+    }
+  }
+
+  &__hint-btn {
+    justify-self: center;
+    grid-row: 2 / 3;
+
+    min-width: 13rem;
+    min-height: 4rem;
+
+    &,
+    &:hover {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      min-width: 10rem;
+      min-height: 3rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__table,
+  &__edge {
+    border-radius: .6rem;
+    transition: all .2s;
+  }
+
+  &__table {
+    @include mixins.flex-center;
+
+    grid-row: 3 / 4;
+
+    padding: 3rem;
+    gap: 3rem;
+
+    transform: rotateX(20deg);
+    transform-origin: bottom;
+
+    background-color: var(--color-primary);
+    box-shadow: -1rem 3rem .1rem var(--color-shadow-grey-lightest);
+
+    min-height: 17rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 1.5rem;
+      min-height: 14rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1rem;
+      min-height: 10rem;
+    }
+
+    &__win {
+      font-size: 5rem;
+      font-weight: 600;
+      color: var(--color-grey-dark)
+    }
+  }
+
+  &__edge {
+    grid-row: 3 / 4;
+    position: absolute;
+
+    height: 2rem;
+    grid-column: 1 / 2;
+
+    inset: 0 0 -19rem 0;
+    margin: auto;
+
+    transform: rotateX(-40deg);
+    transform-origin: top;
+
+    background-color: color-mix(in srgb, var(--color-primary), var(--color-black) 20%);
+
+    @media only screen and (max-width: $bp-medium) {
+      inset: 0 0 -15rem 0;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      inset: 0 0 -11.5rem 0;
+    }
+  }
+
+  &__leg {
+    &--first,
+    &--second {
+      display: block;
+
+      position: absolute;
+      bottom: -1.5rem;
+
+      height: 1.5rem;
+      width: 2rem;
+
+      background-color: color-mix(in srgb, var(--color-primary), var(--color-black) 35%);
+    }
+
+    &--first {
+      left: 2rem;
+    }
+
+    &--second {
+      right: 2rem;
+    }
+  }
+}
+
+.hover--table {
+  box-shadow: 0 0 0 .4rem var(--color-shadow-grey);
+}
+
+.strobe {
+  animation: strobe 1s infinite;
+  transform-origin: bottom;
+}
+
+.fade-in {
+  animation: table-items-fade-in 1s cubic-bezier(.84, .14, .19, 1.54);
+}
+
+.fade-out {
+  animation: table-items-fade-out .3s cubic-bezier(.99, .09, 0, 1.12);
+}
+
+.helper {
+  @include mixins.flex-center;
+
+  position: absolute;
+  padding: .5rem;
+
+  background-color: var(--color-black-alpha-6);
+  backdrop-filter: blur(.3rem);
+  border-radius: 100rem;
+
+  font-size: 1.3rem;
+  color: var(--color-grey-light);
+
+  transition: left var(--helper-transition),
+  top var(--helper-transition),
+  opacity .3s cubic-bezier(.23, .57, .55, .87),
+  visibility .3s cubic-bezier(.23, .57, .55, .87),
+  font-size .35s cubic-bezier(.27, .22, 0, 1.2);
+
+  z-index: 2;
+
+  &--closed {
+    transition: left var(--helper-transition),
+    top var(--helper-transition),
+    opacity .3s cubic-bezier(.23, .57, .55, .87),
+    visibility .3s cubic-bezier(.23, .57, .55, .87),
+    font-size .25s cubic-bezier(.27, .22, 0, 1.2);
+    font-size: 0;
+  }
+}
+
