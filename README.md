@@ -1,6 +1,6 @@
 # **🍽️ CSS Dinner | RS School Task**
 
-**👀 Preview - https://quiddlee.github.io/Eat-n-split**
+**👀 Preview - https://quiddlee.github.io/CSS-Dinner**
 
 # Features 🚀
 - **10 Leveles To Practice Your Css Selecting Skills 💪**
