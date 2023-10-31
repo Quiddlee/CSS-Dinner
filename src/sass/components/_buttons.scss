@@ -5,11 +5,11 @@
 
   &--rounded {
     position: relative;
-    color: var(--text-color-black);
+    color: var(--text-color-dark);
     border-radius: 100rem;
     background-color: transparent;
     border: .2rem solid var(--color-primary);
-    font-weight: 100;
+    font-weight: 300;
 
     &:hover {
       border: none;

@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  gap: 1rem;
+  gap: 2rem;
 
   grid-column: 3 / 4;
   grid-row: 1 / 4;
@@ -18,12 +18,13 @@
   }
 
   &__header {
-    margin: 3.5rem 3rem 3rem 2rem;
+    margin: 3.5rem 3rem 0 2.5rem;
     line-height: .8;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
     color: transparent;
     -webkit-background-clip: text;
+    font-weight: 600;
 
     @media only screen and (max-width: $bp-largest) {
       font-size: 2.5rem;
@@ -52,7 +53,8 @@
       position: relative;
 
       gap: 1rem;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      font-weight: inherit;
 
       background-color: inherit;
 
@@ -60,7 +62,7 @@
       width: 100%;
 
       text-align: left;
-      padding-left: 2rem;
+      padding-left: 2.5rem;
       overflow: hidden;
 
       @media only screen and (max-width: $bp-largest) {
@@ -93,7 +95,7 @@
   &__descr {
     margin-left: .5rem;
     color: var(--color-grey-dark);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding-right: 5rem;
 
     @media only screen and (max-width: $bp-largest) {
