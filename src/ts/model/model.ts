@@ -11,6 +11,7 @@ export const state: State = {
   currLevel: DEFAULT_LEVEL,
   numOfLevels: LEVELS.length - 1,
   completedLevels: [],
+  isFirstLoad: true,
 };
 
 export const setLevel = (newLevel: number) => {
@@ -41,4 +42,7 @@ export const getState = () => {
   state.levelData = parsed.levelData;
   state.currLevel = parsed.currLevel;
   state.completedLevels = parsed.completedLevels;
+
+  // TODO: change to false after modal is done
+  state.isFirstLoad = true;
 };

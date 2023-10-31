@@ -16,6 +16,7 @@ export interface State {
   currLevel: number;
   numOfLevels: number;
   completedLevels: CompletedLevelData[];
+  isFirstLoad: boolean;
 }
 
 export interface SidePanelData {

@@ -5,6 +5,7 @@ import * as cssEditor from '../views/cssEditorView';
 import * as htmlEditor from '../views/htmlEditorView';
 import * as sidePanel from '../views/sidePanelView';
 import * as model from '../model/model';
+import * as startScreen from '../views/startScreenView';
 import { addHover, addHoverForChildren, removeHover } from '../helpers';
 import controlTableIn from './controlTable/controlTableIn';
 import controlHtmlEditorIn from './controlHtmlEditor/controlHtmlEditorIn';
@@ -58,6 +59,7 @@ const init = () => {
   const cssEditorWrapper = cssEditor.init();
   const htmlEditorWrapper = htmlEditor.init();
   const sidePanelWrapper = sidePanel.init();
+  const startScreenWrapper = startScreen.init();
 
   app.element.append(
     tableWrapper,
@@ -67,6 +69,10 @@ const init = () => {
   );
 
   renderLevel();
+
+  if (model.state.isFirstLoad) {
+    document.body.append(startScreenWrapper);
+  }
 
   table.addHoverHandlers(controlTableIn, controlTableOut);
   table.addHintHandler(controlTableHint);
