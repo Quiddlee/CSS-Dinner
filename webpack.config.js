@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires,global-require */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { merge } = require('webpack-merge');
@@ -19,6 +21,10 @@ const baseConfig = {
       {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
