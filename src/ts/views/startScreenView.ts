@@ -3,6 +3,7 @@ import { clearParent } from './view';
 import { IStartScreenData } from '../types/interfaces';
 
 const parentElement = document.createElement('div');
+let currentPage = 0;
 
 const generateMarkup = (data: IStartScreenData) => `
 <dialog class="modal">
@@ -16,38 +17,47 @@ const generateMarkup = (data: IStartScreenData) => `
     </p>
 
     <div class="modal__controls">
-      <button class="modal__btn--skip btn btn--rounded">Skip</button>
-      <button class="modal__btn--continue btn btn--rounded">Continue</button>
+      ${
+        currentPage !== 0
+          ? '<button class="modal__btn--empty btn btn--rounded">Back</button>'
+          : ''
+      }
+      <button class="modal__btn--empty btn btn--rounded">Skip</button>
+      <button class="modal__btn--filled btn btn--rounded">Continue</button>
     </div>
   </article>
 </dialog>`;
 
-export const addHandler = () => {
+export const addHandlerNavigate = (
+  handler: (currentPage: number, isBack: boolean) => void,
+) => {
   parentElement.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    const continueButtonNotClicked = !target.classList.contains(
-      'modal__btn--continue',
-    );
+    const notNavigationButtons =
+      target.textContent !== 'Back' && target.textContent !== 'Continue';
+    const isBackBtnClicked = target.textContent === 'Back';
 
-    if (continueButtonNotClicked) return;
+    if (notNavigationButtons) return;
 
-    // eslint-disable-next-line no-console
-    console.log('continue');
-  });
-
-  parentElement.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const skipButtonNotClicked = !target.classList.contains('modal__btn--skip');
-
-    if (skipButtonNotClicked) return;
-
-    // eslint-disable-next-line no-console
-    console.log('skip');
+    handler(currentPage, isBackBtnClicked);
   });
 };
 
-export const render = (data: IStartScreenData) => {
+export const addHandlerSkip = (handler: () => void) => {
+  parentElement.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const skipButtonNotClicked =
+      !target.classList.contains('modal__btn--empty');
+
+    if (skipButtonNotClicked) return;
+
+    handler();
+  });
+};
+
+export const render = (data: IStartScreenData, newPage: number) => {
   clearParent(parentElement);
+  currentPage = newPage;
   const markup = generateMarkup(data);
   return parentElement.insertAdjacentHTML('afterbegin', markup);
 };

@@ -18,8 +18,8 @@ import controlTableHint from './controlTable/controlTableHint';
 import LEVELS from '../model/levels';
 import controlTableMobileNavNext from './controlTable/controlTableMobileNavNext';
 import controlTableMobileNavPrev from './controlTable/controlTableMobileNavPrev';
-import { IStartScreenData } from '../types/interfaces';
-import startImage from '../../img/start-01.jpg';
+import { START_PAGES } from '../config';
+import { controlNavigate, controlSkip } from './controlStartScreen';
 
 export const addHoverTableAndMarkup = (
   tableElement: HTMLElement,
@@ -73,18 +73,9 @@ const init = () => {
   renderLevel();
 
   if (model.state.isFirstLoad) {
+    const firstPage = START_PAGES[0];
     document.body.append(startScreenWrapper);
-
-    const mockData: IStartScreenData = {
-      img: startImage,
-      title: 'Welcome to css dinner!',
-      description: `<span>🤚 IMPORTANT – PLEASE READ THIS RULES BEFORE START</span>
-      <span>Embark on an exciting journey through the world of web development with CSS Selectors Game 🎮</span>
-      <span>In this interactive series of levels, you will master the art of selecting HTML elements 🙌</span>
-      <span>Unleash your inner coder as you tackle challenges and puzzles designed to teach you the ins and outs of CSS selectors 😎</span>`,
-    };
-
-    startScreen.render(mockData);
+    startScreen.render(firstPage, 0);
   }
 
   table.addHoverHandlers(controlTableIn, controlTableOut);
@@ -97,6 +88,7 @@ const init = () => {
   cssEditor.addHandler(controlCssEditor);
   sidePanel.addResetProgressHandler(controlSidePanelReset);
   sidePanel.addChooseLevelsHandler(controlSidePanelLevels);
-  startScreen.addHandler();
+  startScreen.addHandlerNavigate(controlNavigate);
+  startScreen.addHandlerSkip(controlSkip);
 };
 init();

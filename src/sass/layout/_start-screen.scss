@@ -56,13 +56,13 @@
     gap: 2.5rem;
   }
 
-  &__btn--skip {
+  &__btn--empty {
     height: 5rem;
     width: 9rem;
     font-weight: 400;
   }
 
-  &__btn--continue {
+  &__btn--filled {
     height: 5rem;
     width: 15rem;
     background-color: var(--color-primary);
