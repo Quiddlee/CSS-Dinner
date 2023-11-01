@@ -1,10 +1,14 @@
 import { clearParent } from './view';
 
+import startImage from '../../img/start-01.jpg';
+
 const parentElement = document.createElement('div');
 
 const generateMarkup = () => `
 <div class="modal">
-  <div class="modal__left">left</div>
+  <div class="modal__left">
+    <img class="modal__img" src=${startImage} alt="">
+  </div>
   <div class="modal__right">
     <h2 class="heading">Welcome to css dinner!</h2>
     <p class="description">
