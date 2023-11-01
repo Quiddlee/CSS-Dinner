@@ -31,3 +31,9 @@ export interface TableData {
   currLevel: number;
   completedLevels: CompletedLevelData[];
 }
+
+export interface IStartScreenData {
+  img: string;
+  title: string;
+  description: string;
+}

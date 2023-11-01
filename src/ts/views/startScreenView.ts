@@ -1,38 +1,58 @@
 import { clearParent } from './view';
 
-import startImage from '../../img/start-01.jpg';
+import { IStartScreenData } from '../types/interfaces';
 
 const parentElement = document.createElement('div');
 
-const generateMarkup = () => `
-<div class="modal">
+const generateMarkup = (data: IStartScreenData) => `
+<dialog class="modal">
   <div class="modal__left">
-    <img class="modal__img" src=${startImage} alt="">
+    <img class="modal__img" src=${data.img} alt="">
   </div>
-  <div class="modal__right">
-    <h2 class="heading">Welcome to css dinner!</h2>
+  <article class="modal__right">
+    <h2 class="heading">${data.title}</h2>
     <p class="description">
-      <span>🤚 IMPORTANT – PLEASE READ THIS RULES BEFORE START</span>
-      <span>Embark on an exciting journey through the world of web development with CSS Selectors Game 🎮</span>
-      <span>In this interactive series of levels, you will master the art of selecting HTML elements 🙌</span>
-      <span>Unleash your inner coder as you tackle challenges and puzzles designed to teach you the ins and outs of CSS selectors 😎</span>
+      ${data.description}
     </p>
-  </div>
-</div>`;
 
-export const render = () => {
+    <div class="modal__controls">
+      <button class="modal__btn--skip btn btn--rounded">Skip</button>
+      <button class="modal__btn--continue btn btn--rounded">Continue</button>
+    </div>
+  </article>
+</dialog>`;
+
+export const addHandler = () => {
+  parentElement.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const continueButtonNotClicked = !target.classList.contains(
+      'modal__btn--continue',
+    );
+
+    if (continueButtonNotClicked) return;
+
+    // eslint-disable-next-line no-console
+    console.log('continue');
+  });
+
+  parentElement.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const skipButtonNotClicked = !target.classList.contains('modal__btn--skip');
+
+    if (skipButtonNotClicked) return;
+
+    // eslint-disable-next-line no-console
+    console.log('skip');
+  });
+};
+
+export const render = (data: IStartScreenData) => {
   clearParent(parentElement);
-
-  const markup = generateMarkup();
-
+  const markup = generateMarkup(data);
   return parentElement.insertAdjacentHTML('afterbegin', markup);
 };
 
 export const init = () => {
   parentElement.classList.add('start-screen');
-
-  const markup = generateMarkup();
-  parentElement.insertAdjacentHTML('afterbegin', markup);
-
   return parentElement;
 };
