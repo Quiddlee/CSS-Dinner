@@ -1,6 +1,7 @@
 import { clearParent } from './view';
 
 import { IStartScreenData } from '../types/interfaces';
+import { START_PAGES } from '../config';
 
 const parentElement = document.createElement('div');
 let currentPage = 0;
@@ -23,7 +24,9 @@ const generateMarkup = (data: IStartScreenData) => `
           : ''
       }
       <button class="modal__btn--empty btn btn--rounded">Skip</button>
-      <button class="modal__btn--filled btn btn--rounded">Continue</button>
+      <button class="modal__btn--filled btn btn--rounded">${
+        currentPage === START_PAGES.length - 1 ? 'Start' : 'Continue'
+      }</button>
     </div>
   </article>
 </dialog>`;
@@ -34,7 +37,9 @@ export const addHandlerNavigate = (
   parentElement.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     const notNavigationButtons =
-      target.textContent !== 'Back' && target.textContent !== 'Continue';
+      target.textContent !== 'Back' &&
+      target.textContent !== 'Continue' &&
+      target.textContent !== 'Start';
     const isBackBtnClicked = target.textContent === 'Back';
 
     if (notNavigationButtons) return;
@@ -47,7 +52,8 @@ export const addHandlerSkip = (handler: () => void) => {
   parentElement.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     const skipButtonNotClicked =
-      !target.classList.contains('modal__btn--empty');
+      !target.classList.contains('modal__btn--empty') ||
+      target.textContent !== 'Skip';
 
     if (skipButtonNotClicked) return;
 
@@ -62,7 +68,13 @@ export const render = (data: IStartScreenData, newPage: number) => {
   return parentElement.insertAdjacentHTML('afterbegin', markup);
 };
 
+export const unmount = () => {
+  parentElement.parentNode?.removeChild(parentElement);
+  document.body.style.overflow = '';
+};
+
 export const init = () => {
+  document.body.style.overflow = 'hidden';
   parentElement.classList.add('start-screen');
   return parentElement;
 };

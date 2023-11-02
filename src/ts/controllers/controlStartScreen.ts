@@ -4,15 +4,16 @@ import { START_PAGES } from '../config';
 export const controlNavigate = (currentPage: number, isBack: boolean) => {
   const newPageNum = isBack ? currentPage - 1 : currentPage + 1;
   const newPage = START_PAGES[newPageNum];
+  const isLastPage = newPageNum === START_PAGES.length;
 
-  // eslint-disable-next-line no-console
-  console.log(newPageNum, newPage, isBack);
-
-  if (newPage === undefined) return;
+  if (isLastPage) {
+    startScreen.unmount();
+    return;
+  }
 
   startScreen.render(newPage, newPageNum);
 };
 
 export const controlSkip = () => {
-  // block
+  startScreen.unmount();
 };
