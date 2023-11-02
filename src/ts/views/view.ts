@@ -47,3 +47,30 @@ export const generateCheckMarkIcon = (
   }" x="-5.3" y="16.7" width="13.98" height="4.00786" rx="1" transform="rotate(-45)" />
 </svg>
 `;
+
+export const update = (
+  parentElement: HTMLElement,
+  generateMarkup: () => string,
+) => {
+  const newMarkup = generateMarkup();
+
+  const virtualDom = document.createRange().createContextualFragment(newMarkup);
+  const newElements = virtualDom.querySelectorAll('*');
+  const currElements = parentElement.querySelectorAll('*');
+
+  // eslint-disable-next-line no-console
+  console.log(currElements, newElements);
+
+  newElements.forEach((newElem, i) => {
+    const currElem = currElements[i] as HTMLElement;
+
+    if (newElem.isEqualNode(currElem)) return;
+
+    if ((newElem.firstChild as Node)?.nodeValue?.trim() !== '')
+      currElem.innerHTML = newElem.innerHTML;
+
+    [...newElem.attributes].forEach(({ name, value }) =>
+      currElem.setAttribute(name, value),
+    );
+  });
+};

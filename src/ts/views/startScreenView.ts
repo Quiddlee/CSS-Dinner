@@ -1,4 +1,4 @@
-import { clearParent } from './view';
+import { clearParent, update } from './view';
 
 import { IStartScreenData } from '../types/interfaces';
 import { START_PAGES } from '../config';
@@ -6,30 +6,33 @@ import { START_PAGES } from '../config';
 const parentElement = document.createElement('div');
 let currentPage = 0;
 
-const generateMarkup = (data: IStartScreenData) => `
-<dialog class="modal">
-  <div class="modal__left">
-    <img class="modal__img" src=${data.img} alt="">
-  </div>
-  <article class="modal__right">
-    <h2 class="heading">${data.title}</h2>
-    <p class="description">
-      ${data.description}
-    </p>
+const generateMarkup = (data: IStartScreenData) => {
+  const isFirstPage = currentPage === 0;
+  const isLastPage = currentPage === START_PAGES.length - 1;
 
-    <div class="modal__controls">
-      ${
-        currentPage !== 0
-          ? '<button class="modal__btn--empty btn btn--rounded">Back</button>'
-          : ''
-      }
-      <button class="modal__btn--empty btn btn--rounded">Skip</button>
-      <button class="modal__btn--filled btn btn--rounded">${
-        currentPage === START_PAGES.length - 1 ? 'Start' : 'Continue'
-      }</button>
-    </div>
-  </article>
-</dialog>`;
+  return `
+    <dialog class="modal">
+      <div class="modal__left">
+        <img class="modal__img" src=${data.img} alt="">
+      </div>
+      <article class="modal__right">
+        <h2 class="heading">${data.title}</h2>
+        <p class="description">
+          ${data.description}
+        </p>
+
+        <div class="modal__controls">
+          <button class="${
+            isFirstPage ? 'hidden' : ''
+          } modal__btn--empty btn btn--rounded">Back</button>
+          <button class="modal__btn--empty btn btn--rounded">Skip</button>
+          <button class="modal__btn--filled btn btn--rounded">${
+            isLastPage ? 'Start' : 'Continue'
+          }</button>
+        </div>
+      </article>
+    </dialog>`;
+};
 
 export const addHandlerNavigate = (
   handler: (currentPage: number, isBack: boolean) => void,
@@ -62,8 +65,12 @@ export const addHandlerSkip = (handler: () => void) => {
 };
 
 export const render = (data: IStartScreenData, newPage: number) => {
-  clearParent(parentElement);
   currentPage = newPage;
+
+  if (parentElement.children.length !== 0)
+    return update(parentElement, () => generateMarkup(data));
+
+  clearParent(parentElement);
   const markup = generateMarkup(data);
   return parentElement.insertAdjacentHTML('afterbegin', markup);
 };

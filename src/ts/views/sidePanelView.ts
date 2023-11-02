@@ -1,4 +1,4 @@
-import { clearParent, generateCheckMarkIcon } from './view';
+import { clearParent, generateCheckMarkIcon, update } from './view';
 import { LEVELS_HEADER, RESET_PROGRESS_BTN_TEXT } from '../config';
 import CssClasses from '../types/enums';
 import { MouseEventHandler } from '../types/type';
@@ -44,31 +44,11 @@ const generateMarkup = () => {
   return levels.join('');
 };
 
-export const update = () => {
-  const newMarkup = generateMarkup();
-
-  const virtualDom = document.createRange().createContextualFragment(newMarkup);
-  const newElements = virtualDom.querySelectorAll('*');
-  const currElements = parentElement.querySelectorAll('*');
-
-  newElements.forEach((newElem, i) => {
-    const currElem = currElements[i] as HTMLElement;
-
-    if (newElem.isEqualNode(currElem)) return;
-
-    if ((newElem.firstChild as Node)?.nodeValue?.trim() !== '')
-      currElem.innerHTML = newElem.innerHTML;
-
-    [...newElem.attributes].forEach(({ name, value }) =>
-      currElem.setAttribute(name, value),
-    );
-  });
-};
-
 export const render = (levelData: SidePanelData) => {
   data = levelData;
 
-  if (parentElement.children.length !== 0) return update();
+  if (parentElement.children.length !== 0)
+    return update(parentElement, generateMarkup);
 
   clearParent(parentElement);
   const markup = generateMarkup();
