@@ -54,18 +54,33 @@
     gap: 2.5rem;
   }
 
-  &__btn--empty {
-    height: 5rem;
-    width: 9rem;
-    font-weight: 400;
-    color: var(--text-color-gray);
-  }
+  &__btn {
+    &__icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
 
-  &__btn--filled {
-    height: 5rem;
-    width: 15rem;
-    background-color: var(--color-primary);
-    font-weight: 400;
+    &--empty,
+    &--filled {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    &--empty {
+      height: 5rem;
+      width: 10rem;
+      font-weight: 400;
+      color: var(--text-color-gray);
+    }
+
+    &--filled {
+      height: 5rem;
+      width: 15rem;
+      background-color: var(--color-primary);
+      font-weight: 400;
+    }
   }
 }
 

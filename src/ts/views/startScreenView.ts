@@ -2,6 +2,8 @@ import { clearParent, update } from './view';
 
 import { IStartScreenData } from '../types/interfaces';
 import { START_PAGES } from '../config';
+import arrowRight from '../../img/arrow-right.svg';
+import arrowLeft from '../../img/arrow-left.svg';
 
 const parentElement = document.createElement('div');
 let currentPage = 0;
@@ -22,13 +24,19 @@ const generateMarkup = (data: IStartScreenData) => {
         </p>
 
         <div class="modal__controls">
-          <button class="${
+          <button data-back="true" class="${
             isFirstPage ? 'hidden' : ''
-          } modal__btn--empty btn btn--rounded">Back</button>
+          } modal__btn--empty btn btn--rounded">
+            <img class="modal__btn__icon" src=${arrowLeft} alt="">
+            Back
+          </button>
+
           <button class="modal__btn--empty btn btn--rounded">Skip</button>
           <button class="modal__btn--filled btn btn--rounded">${
             isLastPage ? 'Start' : 'Continue'
-          }</button>
+          }
+            <img class="modal__btn__icon" src=${arrowRight} alt="">
+          </button>
         </div>
       </article>
     </dialog>`;
@@ -39,13 +47,10 @@ export const addHandlerNavigate = (
 ) => {
   parentElement.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    const notNavigationButtons =
-      target.textContent !== 'Back' &&
-      target.textContent !== 'Continue' &&
-      target.textContent !== 'Start';
-    const isBackBtnClicked = target.textContent === 'Back';
+    const notBtn = !target.classList.contains('btn');
+    const isBackBtnClicked = Boolean(target.dataset?.back);
 
-    if (notNavigationButtons) return;
+    if (notBtn) return;
 
     handler(currentPage, isBackBtnClicked);
   });

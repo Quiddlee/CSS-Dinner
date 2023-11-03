@@ -58,9 +58,6 @@ export const update = (
   const newElements = virtualDom.querySelectorAll('*');
   const currElements = parentElement.querySelectorAll('*');
 
-  // eslint-disable-next-line no-console
-  console.log(currElements, newElements);
-
   newElements.forEach((newElem, i) => {
     const currElem = currElements[i] as HTMLElement;
 

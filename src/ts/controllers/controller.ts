@@ -74,8 +74,8 @@ const init = () => {
 
   if (model.state.isFirstLoad) {
     const firstPage = START_PAGES[0];
-    document.body.append(startScreenWrapper);
     startScreen.render(firstPage, 0);
+    document.body.append(startScreenWrapper);
   }
 
   table.addHoverHandlers(controlTableIn, controlTableOut);
