@@ -1,0 +1,33 @@
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+    scale: 1.2;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0.8;
+  }
+}
+
+@keyframes modal-slide {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

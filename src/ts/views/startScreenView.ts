@@ -81,8 +81,13 @@ export const render = (data: IStartScreenData, newPage: number) => {
 };
 
 export const unmount = () => {
-  parentElement.parentNode?.removeChild(parentElement);
-  document.body.style.overflow = '';
+  const modal = parentElement.firstElementChild as HTMLElement;
+
+  modal.style.animation = 'modal-fade-out .24s ease-in both';
+  modal.onanimationend = () => {
+    parentElement.parentNode?.removeChild(parentElement);
+    document.body.style.overflow = '';
+  };
 };
 
 export const init = () => {

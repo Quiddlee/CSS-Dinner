@@ -27,6 +27,8 @@
   overflow: hidden;
   border: none;
 
+  animation: modal-fade-in 0.3s ease-out both;
+
   &__left,
   &__right,
   &__img {
