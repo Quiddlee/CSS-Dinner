@@ -8,7 +8,7 @@ import CssClasses from '../../types/enums';
 import { TableData } from '../../types/interfaces';
 import { helperElement, helperInit } from './tableViewHelper';
 import { levelTitle, updateTitle } from './tableViewTitle';
-import { hintButtonElement, hintInit } from './tableViewHint';
+import { hintInit, parentElement as hintParentElement } from './tableViewHint';
 import {
   generateMobileStaticMarkup,
   mobileNavNext,
@@ -62,18 +62,18 @@ export const render = (renderData: TableData) => {
     const markup = generateWinMarkup();
     parentElement.append(markup);
     updateTitle('Well done!');
-    hintButtonElement.classList.add(CssClasses.HIDDEN);
+    hintParentElement.classList.add(CssClasses.HIDDEN);
     return;
   }
 
   updateTitle(data.levelData.title);
-  hintButtonElement.classList.remove(CssClasses.HIDDEN);
+  hintParentElement.classList.remove(CssClasses.HIDDEN);
 
   const checkMarkData = data.completedLevels.find(
     (lvl) => lvl.level === data.currLevel,
   );
   checkmark.classList.remove(CssClasses.CHECK_ICON_ACTIVE);
-  
+
   if (checkMarkData) {
     checkmark.classList.remove(CssClasses.CHECK_ICON_HINT);
     checkmark.classList.add(CssClasses.CHECK_ICON_ACTIVE);
@@ -112,7 +112,7 @@ export const addHoverHandlers = (
 };
 
 export const addHintHandler = (handler: MouseEventHandler) => {
-  hintButtonElement.addEventListener('click', handler);
+  hintParentElement.addEventListener('click', handler);
 };
 
 export const addMobileNavigationHandlers = (
@@ -148,7 +148,7 @@ export const init = () => {
   tableWrapper.append(
     mobileNavigation,
     levelTitle,
-    hintButtonElement,
+    hintParentElement,
     parentElement,
     tableEdge,
   );

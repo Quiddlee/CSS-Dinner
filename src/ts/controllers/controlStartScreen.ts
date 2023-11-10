@@ -1,5 +1,6 @@
 import * as startScreen from '../views/startScreenView';
 import { START_PAGES } from '../config';
+import { saveState } from '../model/model';
 
 export const controlNavigate = (currentPage: number, isBack: boolean) => {
   const newPageNum = isBack ? currentPage - 1 : currentPage + 1;
@@ -8,6 +9,7 @@ export const controlNavigate = (currentPage: number, isBack: boolean) => {
 
   if (isLastPage) {
     startScreen.unmount();
+    saveState();
     return;
   }
 
@@ -16,4 +18,5 @@ export const controlNavigate = (currentPage: number, isBack: boolean) => {
 
 export const controlSkip = () => {
   startScreen.unmount();
+  saveState();
 };

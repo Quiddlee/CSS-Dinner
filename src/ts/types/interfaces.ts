@@ -5,10 +5,16 @@ export interface CompletedLevelData {
   level: number;
 }
 
+export interface IHintExplanationData {
+  title: string;
+  description: string;
+}
+
 export interface LevelItem {
   title: string;
   hint: string;
   elements: LevelElemsArr;
+  hintExplanation?: IHintExplanationData;
 }
 
 export interface State {

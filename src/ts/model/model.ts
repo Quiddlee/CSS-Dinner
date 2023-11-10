@@ -42,7 +42,5 @@ export const getState = () => {
   state.levelData = parsed.levelData;
   state.currLevel = parsed.currLevel;
   state.completedLevels = parsed.completedLevels;
-
-  // TODO: change to false after modal is done
-  state.isFirstLoad = true;
+  state.isFirstLoad = false;
 };

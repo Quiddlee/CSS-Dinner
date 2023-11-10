@@ -6,6 +6,23 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the plates',
     hint: 'plate',
+    hintExplanation: {
+      title: "No worries, you've got this!",
+      description: `
+        You're about to learn CSS Selectors! Selectors are how you pick which element to apply styles to.
+
+        Exhibit 1 - A CSS Rule
+        <br>
+        p {
+        <br>
+           margin-bottom: 12px;
+        <br>
+        }
+        <br>
+
+        Here, the "p" is the selector (selects all < p > elements) and applies the margin-bottom style.
+      `,
+    },
     elements: [
       [`<plate class="${CssClasses.STROBE}" />`],
       [`<plate class="${CssClasses.STROBE}" />`],
@@ -14,6 +31,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the apples',
     hint: 'apple',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<apple class="${CssClasses.STROBE}" />`],
       [`<plate />`],
@@ -23,6 +44,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the bento box',
     hint: 'bento',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<bento class="${CssClasses.STROBE}"/>`],
       [`<plate />`],
@@ -32,6 +57,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the fancy plate',
     hint: '#fancy',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<plate />`],
       [`<plate class="${CssClasses.STROBE}" id="${FANCY_ID}"/>`],
@@ -41,6 +70,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the small apples',
     hint: 'apple.small',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<apple />`],
       [
@@ -57,6 +90,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select all the plates and bentos',
     hint: 'plate, bento',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<apple class="${CssClasses.SMALL}" />`],
       [`<apple />`],
@@ -70,6 +107,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select all the things!\n',
     hint: '*',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [
         `<plate class="${CssClasses.STROBE}" id="${FANCY_ID}"></plate>`,
@@ -88,6 +129,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select all even plates',
     hint: 'plate:nth-of-type(even)',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [`<plate  />`],
       [`<plate class="${CssClasses.STROBE}" />`],
@@ -99,6 +144,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the apple on the middle plate',
     hint: ':nth-child(2)',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [
         `<plate id="${FANCY_ID}" ></plate>`,
@@ -111,6 +160,10 @@ const LEVELS: LevelItem[] = [
   {
     title: 'Select the big apples',
     hint: 'apple:not(.small)',
+    hintExplanation: {
+      title: 'test',
+      description: 'test',
+    },
     elements: [
       [
         `<plate id="${FANCY_ID}" ></plate>`,

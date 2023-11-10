@@ -91,7 +91,6 @@ export const unmount = () => {
 };
 
 export const init = () => {
-  document.body.style.overflow = 'hidden';
   parentElement.classList.add('start-screen');
   return parentElement;
 };

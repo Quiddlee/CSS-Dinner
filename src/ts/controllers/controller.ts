@@ -6,6 +6,7 @@ import * as htmlEditor from '../views/htmlEditorView';
 import * as sidePanel from '../views/sidePanelView';
 import * as model from '../model/model';
 import * as startScreen from '../views/startScreenView';
+import * as hint from '../views/tableView/tableViewHint';
 import { addHover, addHoverForChildren, removeHover } from '../helpers';
 import controlTableIn from './controlTable/controlTableIn';
 import controlHtmlEditorIn from './controlHtmlEditor/controlHtmlEditorIn';
@@ -37,6 +38,7 @@ export const removeHoverFromTableAndMarkup = () => {
 
 export const renderLevel = () => {
   cssEditor.render();
+  hint.render(model.state.levelData.hintExplanation);
   htmlEditor.render(model.state.levelData.elements);
   table.render({
     levelData: model.state.levelData,
@@ -76,6 +78,7 @@ const init = () => {
     const firstPage = START_PAGES[0];
     startScreen.render(firstPage, 0);
     document.body.append(startScreenWrapper);
+    document.body.style.overflow = 'hidden';
   }
 
   table.addHoverHandlers(controlTableIn, controlTableOut);
