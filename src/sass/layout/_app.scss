@@ -1,10 +1,8 @@
 #app {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) .8fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr) 0.8fr;
 
   max-width: 120rem;
-  max-height: 100rem;
 
   margin: 4vw auto;
 
@@ -13,7 +11,7 @@
 
   background-color: var(--background-main);
 
-  box-shadow: 0 .5rem 5rem var(--color-shadow-grey-light);
+  box-shadow: 0 0.5rem 5rem var(--color-shadow-grey-light);
 
   @media only screen and (max-width: $bp-largest) {
     margin: 0 auto;
@@ -23,7 +21,7 @@
 
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr .75fr;
+    grid-template-rows: 1fr 0.75fr;
     overflow: hidden;
   }
 }

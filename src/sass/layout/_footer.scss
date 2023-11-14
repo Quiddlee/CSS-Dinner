@@ -1,10 +1,11 @@
 .footer {
   align-self: flex-end;
-  margin: 13rem 3rem;
   display: flex;
   gap: 1.3rem;
   align-items: center;
   max-height: 2rem;
+
+  margin: auto 3rem 3rem auto;
 
   &__github {
     width: 2rem;
@@ -19,8 +20,12 @@
   }
 
   &__year {
-    color: rgba(0,0,0,0);
-    background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
+    color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(
+      to bottom right,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
     -webkit-background-clip: text;
     font-weight: 700;
     font-size: 1.3rem;
