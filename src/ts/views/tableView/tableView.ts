@@ -8,7 +8,11 @@ import CssClasses from '../../types/enums';
 import { TableData } from '../../types/interfaces';
 import { helperElement, helperInit } from './tableViewHelper';
 import { levelTitle, updateTitle } from './tableViewTitle';
-import { hintInit, parentElement as hintParentElement } from './tableViewHint';
+import {
+  hintButtonElement,
+  hintInit,
+  parentElement as hintParentElement,
+} from './tableViewHint';
 import {
   generateMobileStaticMarkup,
   mobileNavNext,
@@ -112,7 +116,7 @@ export const addHoverHandlers = (
 };
 
 export const addHintHandler = (handler: MouseEventHandler) => {
-  hintParentElement.addEventListener('click', handler);
+  hintButtonElement.addEventListener('click', handler);
 };
 
 export const addMobileNavigationHandlers = (
