@@ -93,9 +93,11 @@
   }
 
   &__title {
+    margin-top: 3.5rem;
     justify-self: center;
     font-size: 3.5rem;
     font-weight: 500;
+    line-height: 0.8;
     color: color-mix(
       in srgb,
       var(--color-primary-dark),

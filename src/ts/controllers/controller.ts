@@ -1,4 +1,5 @@
 import '../../sass/main.scss';
+import elasticScroll from 'elastic-scroll-polyfill';
 import * as app from '../views/appView';
 import * as table from '../views/tableView/tableView';
 import * as cssEditor from '../views/cssEditorView';
@@ -91,5 +92,7 @@ const init = () => {
   sidePanel.addChooseLevelsHandler(controlSidePanelLevels);
   startScreen.addHandlerNavigate(controlNavigate);
   startScreen.addHandlerSkip(controlSkip);
+
+  elasticScroll({ appleDevicesOnly: false });
 };
 init();
