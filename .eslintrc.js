@@ -24,6 +24,7 @@ module.exports = {
     },
   },
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-shadow': 'warn',
