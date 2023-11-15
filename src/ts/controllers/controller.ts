@@ -1,4 +1,5 @@
-import '../../sass/main.scss';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import elasticScroll from 'elastic-scroll-polyfill';
 import * as app from '../views/appView';
 import * as table from '../views/tableView/tableView';
@@ -21,6 +22,7 @@ import controlTableMobileNavNext from './controlTable/controlTableMobileNavNext'
 import controlTableMobileNavPrev from './controlTable/controlTableMobileNavPrev';
 import { START_PAGES } from '../config';
 import { controlNavigate, controlSkip } from './controlStartScreen';
+import '../../sass/main.scss';
 
 export const addHoverTableAndMarkup = (
   tableElement: HTMLElement,
