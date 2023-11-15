@@ -54,5 +54,8 @@
     "last 2 version",
     "not dead",
     "iOS >= 9"
-  ]
+  ],
+  "dependencies": {
+    "elastic-scroll-polyfill": "^2.1.0"
+  }
 }
