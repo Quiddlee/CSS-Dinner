@@ -8,6 +8,7 @@ import * as htmlEditor from '../views/htmlEditorView';
 import * as sidePanel from '../views/sidePanelView';
 import * as model from '../model/model';
 import * as startScreen from '../views/startScreenView';
+import * as hint from '../views/tableView/tableViewHint';
 import { addHover, addHoverForChildren, removeHover } from '../helpers';
 import controlTableIn from './controlTable/controlTableIn';
 import controlHtmlEditorIn from './controlHtmlEditor/controlHtmlEditorIn';
@@ -52,6 +53,7 @@ export const renderLevel = () => {
     currLevel: model.state.currLevel,
     completedLevels: model.state.completedLevels,
   });
+  hint.unmount();
 };
 
 const init = () => {

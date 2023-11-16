@@ -71,7 +71,7 @@ export const render = (renderData: TableData) => {
   }
 
   updateTitle(data.levelData.title);
-  hintParentElement.classList.remove(CssClasses.HIDDEN);
+  hintButtonElement.classList.remove(CssClasses.HIDDEN);
 
   const checkMarkData = data.completedLevels.find(
     (lvl) => lvl.level === data.currLevel,

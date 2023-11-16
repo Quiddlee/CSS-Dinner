@@ -31,8 +31,10 @@ export const render = (data?: IHintExplanationData) => {
   parentElement.insertAdjacentHTML('beforeend', markup);
 };
 
-const unmount = () => {
-  const hint = parentElement.children[1] as HTMLElement;
+export const unmount = () => {
+  const hint = parentElement.children[1] as HTMLElement | null;
+
+  if (!hint) return;
 
   hint.style.animation = 'hint-fade-out .45s cubic-bezier(0.25, 1.55, 0.65, 1)';
   hint.addEventListener('animationend', hint.remove);
