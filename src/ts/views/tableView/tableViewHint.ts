@@ -22,7 +22,7 @@ const renderHintButton = () => {
     'btn--rounded',
   );
 
-  hintButtonElement.textContent = "Help, I'm stuck!";
+  hintButtonElement.textContent = 'Допоможіть!';
 };
 
 export const render = (data?: IHintExplanationData) => {

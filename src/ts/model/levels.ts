@@ -4,35 +4,36 @@ import { FANCY_ID } from '../config';
 
 const LEVELS: LevelItem[] = [
   {
-    title: 'Select the plates',
+    title: 'Виберіть тарілки',
     hint: 'plate',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        You're about to learn CSS Selectors! Selectors are how you pick which element to apply styles to.
+        Зараз ви вивчите селектори CSS! Селектори - це те, як ви вибираєте елемент, до якого застосовуються стилі.
+        <br>
+        <br>
 
+        1. - Правило CSS
         <br>
         <br>
-        Exhibit 1 - A CSS Rule
 
-        <br>
-        <br>
         p {
         <br>
-           margin-bottom: 12px;
+        margin-bottom: 12px;
         <br>
         }
 
         <br>
         <br>
+        Тут "p" - це селектор (вибирає всі елементи < p >) і застосовує стиль margin-bottom.
+        <br>
+        <br>
 
-        Here, the "p" is the selector (selects all < p > elements) and applies the margin-bottom style.
+        Щоб грати, введіть селектор CSS у редактор нижче, щоб вибрати правильні елементи на столі. Якщо ви вгадаєте, ви перейдете на наступний рівень.
+
         <br>
         <br>
-        To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
-        <br>
-        <br>
-        Hover over the items on the table to see their HTML markup.
+        Наведіть вказівник на елементи на столі, щоб побачити їх HTML-маркування.
       `,
     },
     elements: [
@@ -41,16 +42,16 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the apples',
+    title: 'Виберіть яблука',
     hint: 'apple',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        You're about to learn CSS Selectors! Selectors are how you pick which element to apply styles to.
+        Зараз ви вивчите селектори CSS! Селектори - це те, як ви вибираєте елемент, до якого застосовуються стилі.
 
         <br>
         <br>
-        Exhibit 1 - A CSS Rule
+        1. - Правило CSS
         <br>
         <br>
         p {
@@ -60,7 +61,7 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, the "p" is the selector (selects all < p > elements) and applies the margin-bottom style.
+        Тут "p" - це селектор (вибирає всі елементи < p >) і застосовує стиль margin-bottom.
       `,
     },
     elements: [
@@ -70,16 +71,16 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the bento box',
+    title: 'Виберіть ланч-бокс',
     hint: 'bento',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        You're about to learn CSS Selectors! Selectors are how you pick which element to apply styles to.
+        Зараз ви вивчите селектори CSS! Селектори - це те, як ви вибираєте елемент, до якого застосовуються стилі.
 
         <br>
         <br>
-        Exhibit 1 - A CSS Rule
+        1. - Правило CSS
         <br>
         <br>
         p {
@@ -89,7 +90,7 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, the "p" is the selector (selects all < p > elements) and applies the margin-bottom style.
+        Тут "p" - це селектор (вибирає всі елементи < p >) і застосовує стиль margin-bottom.
       `,
     },
     elements: [
@@ -99,17 +100,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the fancy plate',
+    title: 'Виберіть вишукану тарілку',
     hint: '#fancy',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Great job on mastering CSS Selectors! Now, let's focus on ID selectors. Remember, they start with a '#' symbol. For example:
-
+        Відмінна робота з освоєнням селекторів CSS! Тепер давайте зосередимося на селекторах ідентифікатора. Пам'ятайте, вони починаються з символу '#'. Наприклад:
         <br>
         <br>
-
-        Exhibit 2 - An ID Selector
+        2. - Селектор ідентифікатора
         <br>
         <br>
         #uniqueID {
@@ -119,10 +118,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        In this case, '#uniqueID' is the selector (selects the element with the ID 'uniqueID') and applies the color style.
+        У цьому випадку '#uniqueID' - це селектор (вибирає елемент із ідентифікатором 'uniqueID') і застосовує стиль кольору.
         <br>
         <br>
-        To enhance your skills, input an ID selector in the editor to target specific elements on the page. Hover over elements to reveal their HTML markup.
+        Для поліпшення ваших навичок введіть селектор ідентифікатора в редактор, щоб вибрати конкретні елементи на сторінці. Наведіть вказівник на елементи, щоб побачити їх HTML-маркування.
       `,
     },
     elements: [
@@ -132,16 +131,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the small apples',
+    title: 'Виберіть маленькі яблука',
     hint: 'apple.small',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Fantastic progress! Now, let's delve into class selectors. They begin with a period '.' followed by the class name. For example:
-
+        Фантастичний прогрес! Тепер давайте заглибимося у селектори класу. Вони починаються з крапки '.' і за ним слідує ім'я класу. Наприклад:
         <br>
         <br>
-        Exhibit 3 - A Class Selector
+        3. - Селектор класу
         <br>
         <br>
         .buttonStyle {
@@ -151,11 +149,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, '.buttonStyle' is the selector (targets elements with the class 'buttonStyle') and applies the background-color style.
+        Тут '.buttonStyle' - це селектор (вибирає елементи з класом 'buttonStyle') і застосовує стиль фонового кольору.
         <br>
         <br>
-
-        To level up, enter a class selector in the editor to pinpoint specific elements on the page. Hover over items to uncover their HTML markup.
+        Щоб піднятися на новий рівень, введіть селектор класу в редактор, щоб визначити конкретні елементи на сторінці. Наведіть вказівник на елементи, щоб розкрити їх HTML-маркування.
       `,
     },
     elements: [
@@ -172,15 +169,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select all the plates and bentos',
+    title: 'Виберіть всі тарілки та ланч-бокси',
     hint: 'plate, bento',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Brilliant! Now, let's explore the power of multiple selectors. You can combine selectors using a comma ','. For instance:
+        Чудово! Тепер давайте дослідимо силу кількох селекторів. Ви можете поєднувати їх, використовуючи кому ','. Наприклад:
         <br>
         <br>
-        Exhibit 4 - Multiple Selectors
+        4. - Кілька селекторів
         <br>
         <br>
         h1, h2 {
@@ -190,11 +187,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        In this example, 'h1, h2' are the selectors (targeting both < h 1> and < h 2> elements) and applying the font-family style.
+        У цьому прикладі 'h1, h2' - це селектори (вибирають як елементи < h1 >, так і < h2 >) і застосовують стиль шрифту.
         <br>
         <br>
-
-        For a challenge, input multiple selectors in the editor, separated by commas, to affect multiple elements at once. Hover over items to uncover their HTML markup.
+        Для виклику виклику вам викликати в редакторі кілька селекторів, розділених комами, щоб впливати на декілька елементів одночасно. Наведіть вказівник на елементи, щоб розкрити їх HTML-маркування.
       `,
     },
     elements: [
@@ -208,15 +204,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select all the things!\n',
+    title: 'Виберіть усе!',
     hint: '*',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Awesome! Now, let's explore the universal selector '*'. This selector targets all elements on the page. Take a look:
+        Чудово! Тепер давайте дослідимо універсальний селектор '*'. Цей селектор вибирає всі елементи на сторінці. Подивіться:
         <br>
         <br>
-        Exhibit 5 - Universal Selector
+        5. - Універсальний селектор
         <br>
         <br>
         * {
@@ -226,10 +222,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, '*' is the selector, and it applies the box-sizing style to every element.
+        Тут '*' - це селектор, і він застосовує стиль box-sizing до кожного елемента.
         <br>
         <br>
-        For an advanced task, use the '*' selector in the editor to globally impact all elements. Hover over items to see their HTML markup.
+        Для виклику вам викликати в редакторі універсальний селектор '*', щоб впливати на всі елементи глобально. Наведіть вказівник на елементи, щоб побачити їх HTML-маркування.
       `,
     },
     elements: [
@@ -248,15 +244,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select all even plates',
+    title: 'Виберіть всі парні тарілки',
     hint: 'plate:nth-of-type(even)',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Fantastic! Now, let's dive into the nth-of-type selector. This selector allows you to target elements based on their position within a parent. Consider the following example:
+        Фантастично! Тепер давайте поглибимося у селектор nth-of-type. Цей селектор дозволяє вам вибирати елементи на основі їх положення в батьківському елементі. Розгляньте наступний приклад:
         <br>
         <br>
-        Exhibit 6 - nth-of-type Selector
+        6. - Селектор nth-of-type
         <br>
         <br>
         li:nth-of-type(odd) {
@@ -266,11 +262,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        In this case, 'li:nth-of-type(odd)' is the selector, applying the background color to every odd-numbered < li > element.
+        У цьому випадку 'li:nth-of-type(odd)' - це селектор, який застосовує фоновий колір до кожного непарного елемента < li >.
         <br>
         <br>
-
-        For a challenging task, utilize the nth-of-type selector in the editor to style specific elements based on their position within a parent. Hover over items to reveal their HTML markup.
+        Для складної задачі використовуйте селектор nth-of-type в редакторі, щоб стилізувати конкретні елементи на основі їх положення в батьківському елементі. Наведіть вказівник на елементи, щоб розкрити їх HTML-маркування.
       `,
     },
     elements: [
@@ -282,15 +277,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the apple on the middle plate',
+    title: 'Виберіть яблуко на середній тарілці',
     hint: ':nth-child(2)',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Fantastic! Now, let's explore the versatile :nth-child selector. This selector allows you to target elements based on their position among siblings. Check out this example:
+        Фантастично! Тепер давайте дослідимо універсальний селектор :nth-child. Цей селектор дозволяє вам вибирати елементи на основі їхнього положення серед рівноправних братів. Перегляньте цей приклад:
         <br>
         <br>
-        Exhibit 7 - :nth-child Selector
+        7. - Селектор :nth-child
         <br>
         <br>
         div:nth-child(even) {
@@ -300,11 +295,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, 'div:nth-child(even)' is the selector, applying a border to every even-numbered < div > among its siblings.
+        У цьому випадку 'div:nth-child(even)' - це селектор, який застосовує рамку до кожного парного елемента < div > серед його рівноправних братів.
         <br>
         <br>
-
-        For an engaging task, use the :nth-child selector in the editor to style specific elements based on their position within their parent. Hover over items to unveil their HTML markup.
+        Для цікавого завдання використовуйте селектор :nth-child в редакторі, щоб стилізувати конкретні елементи на основі їхнього положення в батьківському елементі. Наведіть вказівник на елементи, щоб розкрити їх HTML-маркування.
       `,
     },
     elements: [
@@ -317,15 +311,15 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Select the big apples',
+    title: 'Виберіть великі яблука',
     hint: 'apple:not(.small)',
     hintExplanation: {
-      title: "No worries, you've got this!",
+      title: 'Не переймайтеся, у вас все вийде!',
       description: `
-        Fantastic! Now, let's explore the powerful :not pseudo-class. This selector allows you to exclude specific elements from your styling. Take a look at this example:
+        Фантастично! Тепер давайте розглянемо потужний псевдо-клас :not. Цей селектор дозволяє вам виключити певні елементи зі стилізації. Перегляньте цей приклад:
         <br>
         <br>
-        Exhibit 8 - :not Pseudo-class
+        8. - Псевдо-клас :not
         <br>
         <br>
         a:not(.external-link) {
@@ -335,11 +329,10 @@ const LEVELS: LevelItem[] = [
         }
         <br>
         <br>
-        Here, 'a:not(.external-link)' is the selector, applying an underline to all anchor (< a >) elements except those with the class 'external-link.'
+        У цьому випадку 'a:not(.external-link)' - це селектор, який застосовує підкреслення до всіх елементів якоря (< a >), крім тих, які мають клас 'external-link'.
         <br>
         <br>
-
-        For an intriguing challenge, utilize the :not pseudo-class in the editor to exclude certain elements from your styling. Hover over items to reveal their HTML markup.
+        Для захоплюючого завдання використовуйте псевдо-клас :not в редакторі, щоб виключити певні елементи зі стилізації. Наведіть вказівник на елементи, щоб розкрити їх HTML-маркування.
       `,
     },
     elements: [
@@ -356,7 +349,7 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'win',
+    title: 'Кінець!',
     hint: 'hint',
     elements: [],
   },

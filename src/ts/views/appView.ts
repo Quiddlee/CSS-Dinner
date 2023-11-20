@@ -6,7 +6,7 @@ const initScroll = () => {
   scroll.style.cssText = `
     position: relative;
     overflow-y: scroll;
-    height: 99.7dvh;
+    height: 99.5dvh;
     display: block
   `;
   document.body.append(scroll);

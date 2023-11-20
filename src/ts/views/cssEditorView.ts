@@ -10,6 +10,27 @@ const handleInputChange = () => {
   else parentElement.classList.remove(CssClasses.INPUT_STROBE);
 };
 
+const createComments = () => {
+  const comments = document.createElement('p');
+  comments.classList.add('comment');
+  comments.innerHTML = `
+    {
+    <br>
+    /* Стилі будуть прописані тут. */
+    <br>
+    }
+    <br>
+    <br>
+    /*
+    <br>
+    Хай щастить!
+    <br>
+    */
+  `;
+
+  return comments;
+};
+
 const createForm = () => {
   parentElement.classList.add(
     CssClasses.CSS_EDITOR_INPUT,
@@ -17,7 +38,7 @@ const createForm = () => {
   );
 
   parentElement.type = 'Text';
-  parentElement.placeholder = 'Type in a CSS selector';
+  parentElement.placeholder = 'Введіть CSS селектор';
   parentElement.addEventListener('input', handleInputChange);
 
   submitBtn.classList.add(CssClasses.CSS_EDITOR_ENTER_BTN);
@@ -29,8 +50,12 @@ const createEditor = () => {
   editor.classList.add(CssClasses.CSS_EDITOR_EDITOR_AREA);
 
   createForm();
+  const comments = createComments();
+  const formWrapper = document.createElement('div');
+  formWrapper.append(parentElement, submitBtn);
+  formWrapper.classList.add('form__wrapper');
 
-  editor.append(parentElement, submitBtn);
+  editor.append(formWrapper, comments);
   return editor;
 };
 
