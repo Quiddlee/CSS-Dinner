@@ -24,14 +24,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.55rem;
+  height: 1.55rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-grey-dark);
   border-radius: 600px;
-  border: 0.5rem solid var(--color-primary);
+  border: 0.4rem solid var(--color-primary);
 }
 
 ::-webkit-scrollbar-track {
