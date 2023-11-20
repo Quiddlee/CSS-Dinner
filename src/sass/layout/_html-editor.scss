@@ -12,9 +12,9 @@
     cursor: default;
 
     &__block {
-      transition: background-position 1s cubic-bezier(0.14, 0.25, 0, 1.08),
+      transition: background-position 2.5s cubic-bezier(0.14, 0.25, 0, 1.08),
         color 1s;
-      background-size: 50rem;
+      background-size: 70rem;
       background-image: linear-gradient(
         to right,
         var(--color-primary-light),
@@ -28,7 +28,7 @@
 }
 
 div.hover--html {
-  transition: background-position 1s cubic-bezier(0.14, 0.25, 0, 1.08);
+  transition: background-position 0.3s cubic-bezier(0.14, 0.25, 0, 1.08);
   color: transparent;
   background-position: 2rem;
   font-weight: 700;
