@@ -54,6 +54,7 @@ export const renderLevel = () => {
     completedLevels: model.state.completedLevels,
   });
   hint.unmount();
+  hint.renderButton();
 };
 
 const init = () => {

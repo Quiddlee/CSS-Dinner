@@ -31,13 +31,21 @@ export const render = (data?: IHintExplanationData) => {
   parentElement.insertAdjacentHTML('beforeend', markup);
 };
 
-export const unmount = () => {
-  const hint = parentElement.children[1] as HTMLElement | null;
+export const renderButton = () => {
+  parentElement.append(hintButtonElement);
+};
 
-  if (!hint) return;
+export const unmount = () => {
+  const hint = parentElement.children[0] as HTMLElement | null;
+
+  if (!hint || !hint?.classList.contains('hint')) return;
 
   hint.style.animation = 'hint-fade-out .45s cubic-bezier(0.25, 1.55, 0.65, 1)';
   hint.addEventListener('animationend', hint.remove);
+};
+
+export const unmountButton = () => {
+  hintButtonElement.remove();
 };
 
 parentElement.addEventListener('click', (e) => {

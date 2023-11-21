@@ -1,11 +1,9 @@
 import * as cssEditor from '../../views/cssEditorView';
 import * as model from '../../model/model';
-import CssClasses from '../../types/enums';
 import { createLetterSlicer } from '../../helpers';
 import * as hint from '../../views/tableView/tableViewHint';
 
-const controlTableHint = (e: MouseEvent) => {
-  const hintBtn = e.target as HTMLElement;
+const controlTableHint = () => {
   const intervalDelay = 120;
   const hintText = model.state.levelData.hint;
 
@@ -19,8 +17,7 @@ const controlTableHint = (e: MouseEvent) => {
   }, intervalDelay);
 
   hint.render(model.state.levelData.hintExplanation);
-
-  hintBtn.classList.add(CssClasses.HIDDEN);
+  hint.unmountButton();
 };
 
 export default controlTableHint;
