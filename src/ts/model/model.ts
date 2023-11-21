@@ -42,5 +42,5 @@ export const getState = () => {
   state.levelData = parsed.levelData;
   state.currLevel = parsed.currLevel;
   state.completedLevels = parsed.completedLevels;
-  state.isFirstLoad = false;
+  // state.isFirstLoad = false;
 };

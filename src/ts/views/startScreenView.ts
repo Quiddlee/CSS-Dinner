@@ -28,12 +28,12 @@ const generateMarkup = (data: IStartScreenData) => {
             isFirstPage ? 'hidden' : ''
           } modal__btn--empty btn btn--rounded">
             <img class="modal__btn__icon" src=${arrowLeft} alt="">
-            Back
+            Назад
           </button>
 
-          <button class="modal__btn--empty btn btn--rounded">Skip</button>
+          <button class="modal__btn--empty btn btn--rounded">Пропустити</button>
           <button class="modal__btn--filled btn btn--rounded">${
-            isLastPage ? 'Start' : 'Continue'
+            isLastPage ? 'Старт' : 'Далі'
           }
             <img class="modal__btn__icon" src=${arrowRight} alt="">
           </button>
@@ -61,7 +61,7 @@ export const addHandlerSkip = (handler: () => void) => {
     const target = e.target as HTMLElement;
     const skipButtonNotClicked =
       !target.classList.contains('modal__btn--empty') ||
-      target.textContent !== 'Skip';
+      target.textContent !== 'Пропустити';
 
     if (skipButtonNotClicked) return;
 

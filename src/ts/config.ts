@@ -25,75 +25,75 @@ export const HTML_TAGS: Map<string, string> = new Map([
 export const START_PAGES: IStartScreenData[] = [
   {
     img: startImage1,
-    title: 'WELCOME TO CSS DINNER!',
+    title: 'ЛАСКАВО ПРОСИМО ДО CSS ВЕЧЕРІ!',
     description: `
-      🤚 IMPORTANT – PLEASE READ THIS RULES BEFORE START
-      <br><br>
-      Embark on an exciting journey through the world of web development with CSS Selectors Game 🎮
-      <br><br>
-      In this interactive series of levels, you will master the art of selecting HTML elements 🙌
-      <br><br>
-      Unleash your inner coder as you tackle challenges and puzzles designed to teach you the ins and outs of CSS selectors 😎
-    `,
+    🤚 ВАЖЛИВО – БУДЬ ЛАСКА, ОЗНАЙОМТЕСЯ З ЦИМИ ПРАВИЛАМИ ПЕРЕД ПОЧАТКОМ
+    <br><br>
+    Відправтеся в чудову подорож світом розробки веб-сайтів з грою CSS Selector 🎮
+    <br><br>
+    У цій інтерактивній серії рівнів, ви опануєте мистецтво вибору елементів HTML 🙌
+    <br><br>
+    Випустіть свого внутрішнього кодера, коли ви виконуєте виклики та загадки, розроблені для навчання основ CSS селекторів 😎
+  `,
   },
 
   {
     img: startImage2,
-    title: 'INSPECT ELEMENTS AND HTML CODE',
+    title: 'ОГЛЯД ЕЛЕМЕНТІВ ТА HTML КОДУ',
     description: `
-      Your task is to select the elements that is dancing 💃
-      <br><br>
-      To improve your understanding, you can hover over any element on the table. This will show you the corresponding HTML code in the viewer. 👌
-      <br><br>
-      Additionally, you can hover over the HTML code to highlight the element on the table.
-      <br><br>
-      This feature helps you make the connection between CSS selectors and the actual HTML elements 😉.
-    `,
+    Ваше завдання - вибрати елементи, які танцюють 💃
+    <br><br>
+    Щоб покращити розуміння, ви можете навести курсор на будь-який елемент на столі. Це покаже вам відповідний HTML код у вікні перегляду. 👌
+    <br><br>
+    Додатково, ви можете навести курсор на HTML код, щоб виділити елемент на столі.
+    <br><br>
+    Ця функція допомагає вам зробити зв'язок між CSS селекторами та фактичними HTML елементами 😉.
+  `,
   },
 
   {
     img: startImage3,
-    title: 'SELECT THE DANCING ELEMENTS',
+    title: 'ВИБЕРІТЬ ТАНЦЮЮЧІ ЕЛЕМЕНТИ',
     description: `
-      As already been said Your main goal is to select all the elements on the table that are dancing (strobe). 😃
-      <br><br>
-      To do this, simply type the CSS selector into the input field provided. With green gradient background 😍
-      <br><br>
-      <br><br>
-    `,
+    Як вже було сказано, ваше основне завдання - вибрати всі елементи на столі, які танцюють (strobe). 😃
+    <br><br>
+    Щоб зробити це, просто введіть CSS селектор у надане поле вводу. З зеленим градієнтним фоном 😍
+    <br><br>
+    <br><br>
+  `,
   },
 
   {
     img: startImage4,
-    title: 'GET HELP WITH THE BUTTON',
+    title: 'ОТРИМАЙТЕ ДОПОМОГУ З КНОПКОЮ',
     description: `
-      If you're stuck or need a hint 😱, don't worry! You can press the "Help I’m stuck" button, which will reveal the correct CSS selector for the dancing elements.
-      <br><br>
-      And also describes when it should be used and how it should be used 🙂
-      <br><br>
-      <br><br>
-    `,
+    Якщо ви застрягли або потребуєте підказки 😱, не хвилюйтеся! Ви можете натиснути кнопку "Допоможіть, я застряг", яка відкриє правильний CSS селектор для танцюючих елементів.
+    <br><br>
+    А також описує, коли його слід використовувати та як його слід використовувати 🙂
+    <br><br>
+    <br><br>
+  `,
   },
 
   {
     img: startImage5,
-    title: 'CHOOSE YOUR LEVEL',
+    title: 'ВИБЕРІТЬ СВІЙ РІВЕНЬ',
     description: `
-      In the right panel, you have the option to select the level that you want.
-      <br><br>
-      There are different kind of levels to challenge your CSS selection skills 💪.
-      <br><br>
-      <br><br>
-    `,
+    У правій панелі ви маєте можливість вибрати рівень, який вам потрібен.
+    <br><br>
+    Є різні види рівнів, щоб викликати ваши навички вибору CSS 💪.
+    <br><br>
+    <br><br>
+  `,
   },
 
   {
     img: startImage6,
-    title: 'RESET YOUR PROGRESS',
+    title: 'СКИНУТИ ПРОГРЕСС',
     description: `
-      If you wish to start over or reset your progress, there's a handy "Reset Progress" 💫 option available in the right panel.
+      Якщо ви хочете почати спочатку або скинути свій прогрес, на панелі справа є зручна опція «Скинути прогрес» 💫.
       <br><br>
-      Enjoy the CSS Selecting Game and have a blast mastering your CSS selection skills! 🤠
+      Насоложуйтеся грою в виборі CSS та вдосконалюйте свої навички вибору CSS! 🤠
       <br><br>
       <br><br>
     `,
