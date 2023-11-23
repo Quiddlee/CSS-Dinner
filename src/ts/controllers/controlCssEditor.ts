@@ -1,10 +1,10 @@
 import * as table from '../views/tableView/tableView';
 import * as cssEditor from '../views/cssEditorView';
+import { parentElement } from '../views/cssEditorView';
 import * as model from '../model/model';
 import * as app from '../views/appView';
 import CssClasses from '../types/enums';
 import { renderLevel } from './controller';
-import { parentElement } from '../views/cssEditorView';
 import { FORBIDDEN_SELECTOR } from '../config';
 
 const controlCssEditor = async () => {
@@ -59,8 +59,8 @@ const controlCssEditor = async () => {
   const hintBtnElement = document.querySelector(
     `.${CssClasses.TABLE_WRAPPER_HINT_BTN}`,
   ) as HTMLElement;
-  const isHintUsed = hintBtnElement.classList.contains(CssClasses.HIDDEN);
-  
+  const isHintUsed = !hintBtnElement;
+
   model.addCompletedLevel({
     isHintUsed,
     level: model.state.currLevel,

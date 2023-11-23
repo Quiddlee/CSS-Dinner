@@ -28,7 +28,7 @@ let data: TableData;
 export const generateWinMarkup = () => {
   const win = document.createElement('div');
   win.classList.add(CssClasses.TABLE_WRAPPER_TABLE_WIN);
-  win.textContent = 'You Win! 🎉🎉🎉';
+  win.textContent = 'Ви виграли! 🎉🎉🎉';
   return win;
 };
 
@@ -65,7 +65,7 @@ export const render = (renderData: TableData) => {
   if (data.levelData.title === 'win') {
     const markup = generateWinMarkup();
     parentElement.append(markup);
-    updateTitle('Well done!');
+    updateTitle('Вітаємо!');
     hintParentElement.classList.add(CssClasses.HIDDEN);
     return;
   }

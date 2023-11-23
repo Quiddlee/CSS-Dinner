@@ -349,7 +349,7 @@ const LEVELS: LevelItem[] = [
     ],
   },
   {
-    title: 'Кінець!',
+    title: 'win',
     hint: 'hint',
     elements: [],
   },
