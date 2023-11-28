@@ -1,6 +1,6 @@
-# **🍽️ CSS Dinner | RS School Task**
+# **🍽️ CSS Selectors | RS School Task**
 
-**👀 Preview - https://quiddlee.github.io/CSS-Dinner**
+**👀 Preview - https://quiddlee.github.io/CSS-Selectors**
 
 # Features 🚀
 - **10 Leveles To Practice Your Css Selecting Skills 💪**
