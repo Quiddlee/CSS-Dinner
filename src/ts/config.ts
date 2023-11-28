@@ -25,7 +25,7 @@ export const HTML_TAGS: Map<string, string> = new Map([
 export const START_PAGES: IStartScreenData[] = [
   {
     img: startImage1,
-    title: 'ЛАСКАВО ПРОСИМО ДО CSS ВЕЧЕРІ!',
+    title: 'ЛАСКАВО ПРОСИМО ДО CSS СЕЛЕКТОРІВ!',
     description: `
     🤚 ВАЖЛИВО – БУДЬ ЛАСКА, ОЗНАЙОМТЕСЯ З ЦИМИ ПРАВИЛАМИ ПЕРЕД ПОЧАТКОМ
     <br><br>
